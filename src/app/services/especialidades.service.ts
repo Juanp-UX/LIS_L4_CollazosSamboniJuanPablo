@@ -49,7 +49,4 @@ export class EspecialidadesService {
     return this.especialidades;
   }
 
-  obtenerPorClave(clave: string): Especialidad | undefined {
-    return this.especialidades.find(e => e.clave === clave);
-  }
 }

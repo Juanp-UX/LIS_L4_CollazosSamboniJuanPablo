@@ -67,7 +67,4 @@ export class MedicosService {
     return this.medicos;
   }
 
-  obtenerPorEspecialidad(clave: string): Medico[] {
-    return this.medicos.filter(m => m.especialidadClave === clave);
-  }
 }
