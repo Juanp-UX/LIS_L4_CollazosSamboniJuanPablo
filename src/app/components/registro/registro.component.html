@@ -1,0 +1,97 @@
+<section id="seccion3" class="w-100 py-4 py-md-5 bg-white">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8">
+        <div class="border rounded-3 p-3 p-md-4 shadow-sm pz-form-card">
+          <h2 class="text-center mb-4 pz-titulo-seccion">Registro de nuevos usuarios</h2>
+          <p class="lead text-center mb-4">Completa el formulario para crear tu registro en la clínica.</p>
+
+          <form [formGroup]="registroForm" (ngSubmit)="onSubmit()" novalidate>
+            <div class="row g-3">
+              <div class="col-12 col-md-6">
+                <label for="nombres" class="form-label">Nombres</label>
+                <input type="text" class="form-control" id="nombres" formControlName="nombres" maxlength="40"
+                  [class.is-invalid]="campoInvalido('nombres')" [class.is-valid]="campoValido('nombres')"
+                  (blur)="validarAlPerderFoco('nombres')" />
+                <div class="text-danger small mt-1" [class.d-none]="!campoInvalido('nombres')" id="nombresError">
+                  @if (superaLongitud('nombres')) {
+                    Máximo 40 caracteres.
+                  } @else {
+                    Ingresa tus nombres.
+                  }
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label for="apellidos" class="form-label">Apellidos</label>
+                <input type="text" class="form-control" id="apellidos" formControlName="apellidos" maxlength="40"
+                  [class.is-invalid]="campoInvalido('apellidos')" [class.is-valid]="campoValido('apellidos')"
+                  (blur)="validarAlPerderFoco('apellidos')" />
+                <div class="text-danger small mt-1" [class.d-none]="!campoInvalido('apellidos')" id="apellidosError">
+                  @if (superaLongitud('apellidos')) {
+                    Máximo 40 caracteres.
+                  } @else {
+                    Ingresa tus apellidos.
+                  }
+                </div>
+              </div>
+
+              <div class="col-12">
+                <label class="form-label d-block">Género</label>
+                <div class="d-flex justify-content-start flex-wrap gap-3" id="generoGroup">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="genero" id="generoFemenino"
+                      value="femenino" (blur)="validarAlPerderFoco('genero')" />
+                    <label class="form-check-label" for="generoFemenino">Femenino</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="genero" id="generoMasculino"
+                      value="masculino" (blur)="validarAlPerderFoco('genero')" />
+                    <label class="form-check-label" for="generoMasculino">Masculino</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="genero" id="generoOtro"
+                      value="otro" (blur)="validarAlPerderFoco('genero')" />
+                    <label class="form-check-label" for="generoOtro">Otro</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="genero" id="generoNoDecir"
+                      value="prefiero-no-decirlo" (blur)="validarAlPerderFoco('genero')" />
+                    <label class="form-check-label" for="generoNoDecir">Prefiero no decirlo</label>
+                  </div>
+                </div>
+                <div class="text-danger small mt-1" [class.d-none]="!campoInvalido('genero')" id="generoError">
+                  Selecciona un género.
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label for="email" class="form-label">Correo electrónico</label>
+                <input type="email" class="form-control" id="email" formControlName="email"
+                  placeholder="nombre@correo.com" [class.is-invalid]="campoInvalido('email')"
+                  [class.is-valid]="campoValido('email')" (blur)="validarAlPerderFoco('email')" />
+                <div id="emailHelp" class="form-text">Usaremos este correo para enviarte la confirmación de tu
+                  registro.</div>
+                <div class="text-danger small mt-1" [class.d-none]="!campoInvalido('email')" id="emailError">
+                  Ingresa un correo válido.
+                </div>
+              </div>
+
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary" id="btnRegistrar">Confirmar registro</button>
+              </div>
+            </div>
+          </form>
+
+          @if (registroConfirmado) {
+            <div class="alert alert-success mt-4" role="alert" id="registroConfirmacion">
+              <h3 class="h6 mb-2">¡Registro confirmado!</h3>
+              <p class="mb-1"><strong>Usuario:</strong> <span id="confirmNombre">{{ confirmNombre }}</span></p>
+              <p class="mb-1"><strong>Correo:</strong> <span id="confirmEmail">{{ confirmEmail }}</span></p>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

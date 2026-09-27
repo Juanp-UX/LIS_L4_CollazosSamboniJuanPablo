@@ -1,0 +1,54 @@
+.pz-seccion-promociones {
+  background: linear-gradient(180deg, var(--pz-azul-claro) 0%, #ffffff 100%);
+}
+
+.pz-titulo-seccion {
+  color: var(--pz-azul-oscuro);
+  font-weight: 700;
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: var(--pz-azul);
+}
+
+.carousel-img-wrapper {
+  width: 100%;
+  height: 260px;
+  background-color: #e9ecef;
+}
+
+.carousel-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .carousel-img-wrapper {
+    height: 380px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .carousel-img-wrapper {
+    height: 460px;
+  }
+}
+
+/* Fondo carrusel */
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.55);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  bottom: 1.5rem;
+}
+
+.carousel-caption h5 {
+  font-weight: 700;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-caption p {
+  margin-bottom: 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}

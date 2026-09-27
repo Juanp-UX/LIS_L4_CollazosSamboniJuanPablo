@@ -1,0 +1,28 @@
+
+:root {
+  --pz-azul-oscuro: #0b3d66;
+  --pz-azul: #1565a6;
+  --pz-azul-medio: #2f8fd6;
+  --pz-azul-claro: #eaf4fc;
+  --pz-celeste: #d6ecfa;
+  --pz-acento: #3fc1c9;
+  --pz-texto-oscuro: #10263b;
+}
+
+body {
+  font-family: 'Nunito Sans', 'Segoe UI', sans-serif;
+  color: var(--pz-texto-oscuro);
+}
+
+h1, h2, h3, h4, h5, h6,
+.navbar-brand {
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+.social-link {
+  transition: opacity 0.2s ease;
+}
+
+.social-link:hover {
+  opacity: 0.75;
+}

@@ -1,0 +1,38 @@
+.pz-medico-card {
+  border: 1px solid var(--pz-azul-claro);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.pz-medico-card:hover {
+  box-shadow: 0 6px 16px rgba(21, 101, 166, 0.18);
+  transform: translateY(-2px);
+}
+
+.pz-medico-nombre {
+  color: var(--pz-azul-oscuro);
+}
+
+.pz-medico-especialidad {
+  color: var(--pz-azul-medio);
+  font-weight: 600;
+}
+
+.pz-btn-agendar {
+  background-color: var(--pz-azul);
+  border-color: var(--pz-azul);
+  color: #fff;
+}
+
+.pz-btn-agendar:hover {
+  background-color: var(--pz-azul-oscuro);
+  border-color: var(--pz-azul-oscuro);
+  color: #fff;
+}
+
+.doctor-photo {
+  height: 180px;
+  width: 100%;
+  object-fit: cover;
+  object-position: top center;
+  border-bottom: 1px solid #dee2e6;
+}

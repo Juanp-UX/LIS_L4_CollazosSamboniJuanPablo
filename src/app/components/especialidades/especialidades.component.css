@@ -1,0 +1,73 @@
+.pz-seccion-medicos {
+  background-color: var(--pz-celeste);
+}
+
+.pz-titulo-seccion {
+  color: var(--pz-azul-oscuro);
+  font-weight: 700;
+}
+
+.pz-sidebar {
+  border-color: var(--pz-azul-medio) !important;
+  border-width: 2px !important;
+}
+
+.pz-sidebar-titulo {
+  color: var(--pz-azul-oscuro);
+  font-weight: 600;
+}
+
+
+#specialtyList {
+  border: none;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+#specialtyList .list-group-item {
+  display: block !important;
+  border: 1px solid var(--pz-celeste) !important;
+  border-radius: 0.375rem !important;
+  background: var(--pz-azul-claro) !important;
+  padding: 0.5rem 0.75rem !important;
+  color: var(--pz-azul) !important;
+  text-decoration: none !important;
+  font-size: 0.95rem !important;
+}
+
+#specialtyList .list-group-item:hover {
+  color: var(--pz-azul-oscuro) !important;
+  background: var(--pz-celeste) !important;
+}
+
+#specialtyList .list-group-item.active {
+  background: var(--pz-azul) !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+  border-color: var(--pz-azul) !important;
+}
+
+#specialtyDescriptionBox {
+  border: none !important;
+  background: var(--pz-azul-claro) !important;
+  padding: 0.75rem !important;
+}
+
+#specialtyTitle {
+  display: none;
+}
+
+.pz-fade-especialidad {
+  animation: pzFadeIn 0.35s ease;
+}
+
+@keyframes pzFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

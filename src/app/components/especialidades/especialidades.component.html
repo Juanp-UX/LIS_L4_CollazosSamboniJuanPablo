@@ -1,0 +1,45 @@
+<section id="seccion2" class="w-100 py-4 py-md-5 pz-seccion-medicos">
+  <div class="container">
+    <div class="row g-3">
+      <!-- Sidebar de especialidades -->
+      <aside class="col-12 col-sm-2 col-md-4">
+        <div class="bg-white border rounded-3 p-3 h-100 pz-sidebar">
+          <h3 class="h6 mb-3 pz-sidebar-titulo">Especialidades</h3>
+
+          <div class="list-group mb-3" id="specialtyList">
+            @for (especialidad of especialidades; track especialidad.clave) {
+              <button type="button" class="list-group-item list-group-item-action"
+                [class.active]="esActiva(especialidad)"
+                (click)="seleccionarEspecialidad(especialidad)">
+                {{ especialidad.titulo }}
+              </button>
+            }
+          </div>
+
+          <div class="border rounded-3 p-3" id="specialtyDescriptionBox">
+            @for (especialidad of [especialidadSeleccionada]; track especialidad.clave) {
+              <div class="pz-fade-especialidad">
+                <h3 class="h6 mb-2" id="specialtyTitle">{{ especialidad.titulo }}</h3>
+                <p class="mb-0 small" id="specialtyDescription">
+                  {{ especialidad.descripcion }}
+                </p>
+              </div>
+            }
+          </div>
+        </div>
+      </aside>
+
+      <!-- Tarjetas de médicos -->
+      <div class="col-12 col-sm-10 col-md-8">
+        <h2 class="text-center mb-4 pz-titulo-seccion">Nuestro equipo médico</h2>
+        <div class="row g-3 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+          @for (medico of medicos; track medico.id) {
+            <div class="col">
+              <app-medico-card [medico]="medico"></app-medico-card>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

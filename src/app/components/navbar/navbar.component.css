@@ -1,0 +1,19 @@
+.pz-navbar {
+  background: linear-gradient(135deg, var(--pz-azul-oscuro), var(--pz-azul));
+  box-shadow: 0 2px 8px rgba(11, 61, 102, 0.25);
+}
+
+.pz-navbar .navbar-brand {
+  font-size: 1.35rem;
+  letter-spacing: 0.3px;
+}
+
+.pz-navbar .nav-link {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.pz-navbar .nav-link:hover,
+.pz-navbar .nav-link:focus {
+  color: var(--pz-acento);
+}

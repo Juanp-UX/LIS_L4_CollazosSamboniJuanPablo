@@ -1,0 +1,38 @@
+<section id="seccion1" class="w-100 py-4 py-md-5 pz-seccion-promociones">
+  <div class="container">
+    <h2 class="text-center mb-4 pz-titulo-seccion">Promociones de la clínica</h2>
+
+    <div id="promoCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        @for (slide of slides; track slide.titulo; let i = $index) {
+          <button type="button" data-bs-target="#promoCarousel" [attr.data-bs-slide-to]="i"
+            [class.active]="i === 0" [attr.aria-current]="i === 0 ? 'true' : null"
+            [attr.aria-label]="'Promoción ' + (i + 1)"></button>
+        }
+      </div>
+
+      <div class="carousel-inner rounded-3 overflow-hidden shadow-sm">
+        @for (slide of slides; track slide.titulo; let i = $index) {
+          <div class="carousel-item" [class.active]="i === 0">
+            <div class="carousel-img-wrapper">
+              <img [src]="slide.imagen" class="d-block w-100 carousel-img" [alt]="slide.alt" />
+            </div>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>{{ slide.titulo }}</h5>
+              <p>{{ slide.descripcion }}</p>
+            </div>
+          </div>
+        }
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#promoCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#promoCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </button>
+    </div>
+  </div>
+</section>

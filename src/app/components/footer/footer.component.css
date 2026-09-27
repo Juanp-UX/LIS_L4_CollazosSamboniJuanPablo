@@ -1,0 +1,7 @@
+.pz-footer {
+  background: linear-gradient(135deg, var(--pz-azul-oscuro), #082744);
+}
+
+.pz-footer-icono {
+  color: var(--pz-acento);
+}
